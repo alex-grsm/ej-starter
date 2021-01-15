@@ -46,60 +46,6 @@ const fonts = () => {
     .pipe(dest('./app/fonts/dist/'));
 }
 
-const checkWeight = (fontname) => {
-  let weight = 400;
-  switch (true) {
-    case /Thin/.test(fontname):
-      weight = 100;
-      break;
-    case /ExtraLight/.test(fontname):
-      weight = 200;
-      break;
-    case /Light/.test(fontname):
-      weight = 300;
-      break;
-    case /Regular/.test(fontname):
-      weight = 400;
-      break;
-    case /Normal/.test(fontname):
-      weight = 400;
-      break;
-    case /Medium/.test(fontname):
-      weight = 500;
-      break;
-    case /SemiBold/.test(fontname):
-      weight = 600;
-      break;
-    case /Demi/.test(fontname):
-      weight = 600;
-      break;
-    case /Semi/.test(fontname):
-      weight = 600;
-      break;
-    case /Bold/.test(fontname):
-      weight = 700;
-      break;
-    case /ExtraBold/.test(fontname):
-      weight = 800;
-      break;
-    case /BoldItalic/.test(fontname):
-      weight = 800;
-      break;
-    case /UltraBold/.test(fontname):
-      weight = 800;
-      break;
-    case /Heavy/.test(fontname):
-      weight = 800;
-      break;
-    case /Black/.test(fontname):
-      weight = 900;
-      break;
-    default:
-      weight = 400;
-  }
-  return weight;
-}
-
 function scripts() {
 	return src(['app/js/*.js', '!app/js/*.min.js'])
 		.pipe(webpack({
