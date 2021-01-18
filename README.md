@@ -1,6 +1,6 @@
 # ej-Starter
 ## Download:
-> git clone https://github.com/alex-grsm/ej-starter .; rm -rf trunk .gitignore readme.md .git
+` git clone https://github.com/alex-grsm/ej-starter .; rm -rf trunk .gitignore readme.md .git `
 ## Gulp tasks:
 + gulp: запуск дефолтного gulp таска для разработки;
 + gulp fonts: конвертация шрифтов ttf в woff2 формат;
