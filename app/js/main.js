@@ -2,6 +2,9 @@
 
 // require('~/app/js/vendor/mmenu/js/jquery.mmenu.all.min.js') // import vendor jQuery plugin example (not module)
 
+// import './vendor/focus-visible.min.js';
+import {scrollTo} from './functions/smooth-scroll';
+
 document.addEventListener('DOMContentLoaded', () => {
 
 	// Custom JS
