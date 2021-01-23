@@ -49,7 +49,8 @@ const fonts = () => {
 function scripts() {
 	return src(['app/js/*.js', '!app/js/*.min.js'])
 		.pipe(webpack({
-			mode: 'development',
+			mode: 'production',
+			performance: { hints: false },
 			output: {
 				filename: 'main.js',
 			},
