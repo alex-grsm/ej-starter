@@ -51,9 +51,6 @@ function scripts() {
 		.pipe(webpack({
 			mode: 'production',
 			performance: { hints: false },
-			output: {
-				filename: 'main.js',
-			},
 			module: {
 				rules: [
 					{
