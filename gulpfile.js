@@ -69,7 +69,38 @@ function scripts() {
 		})
 
     .pipe(sourcemaps.init())
-		.pipe(uglify().on("error", notify.onError()))
+		// .pipe(uglify({
+		// 	// https://github.com/mishoo/UglifyJS#mangle-options
+		// 	mangle: {
+		// 			toplevel: false
+		// 	},
+		// 	// https://github.com/mishoo/UglifyJS#compress-options
+		// 	compress: {
+		// 			drop_console: false
+		// 	},
+		// 	// https://github.com/mishoo/UglifyJS#output-options
+		// 	output: {
+		// 			beautify: true,
+		// 			comments: true,
+		// 			preamble: "/* Licensing info */"
+		// 	}
+		// }).on("error", notify.onError()))
+		.pipe(uglify({
+			// https://github.com/mishoo/UglifyJS#mangle-options
+			mangle: {
+					toplevel: true
+			},
+			// https://github.com/mishoo/UglifyJS#compress-options
+			compress: {
+					drop_console: true
+			},
+			// https://github.com/mishoo/UglifyJS#output-options
+			output: {
+					beautify: false,
+					comments: false,
+					preamble: "/* Licensing info */"
+			}
+		}).on("error", notify.onError()))
 		.pipe(rename('main.min.js'))
     .pipe(sourcemaps.write('.'))
 		.pipe(dest('app/js'))
