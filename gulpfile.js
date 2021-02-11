@@ -49,8 +49,9 @@ const fonts = () => {
 function scripts() {
 	return src(['app/js/*.js', '!app/js/*.min.js'])
 		.pipe(webpack({
-			mode: 'production',
+			mode: 'de',
 			performance: { hints: false },
+			optimization: { minimize: false },
 			module: {
 				rules: [
 					{
@@ -74,10 +75,6 @@ function scripts() {
 		// 	mangle: {
 		// 			toplevel: false
 		// 	},
-		// 	// https://github.com/mishoo/UglifyJS#compress-options
-		// 	compress: {
-		// 			drop_console: false
-		// 	},
 		// 	// https://github.com/mishoo/UglifyJS#output-options
 		// 	output: {
 		// 			beautify: true,
@@ -85,22 +82,18 @@ function scripts() {
 		// 			preamble: "/* Licensing info */"
 		// 	}
 		// }).on("error", notify.onError()))
-		.pipe(uglify({
-			// https://github.com/mishoo/UglifyJS#mangle-options
-			mangle: {
-					toplevel: true
-			},
-			// https://github.com/mishoo/UglifyJS#compress-options
-			compress: {
-					drop_console: true
-			},
-			// https://github.com/mishoo/UglifyJS#output-options
-			output: {
-					beautify: false,
-					comments: false,
-					preamble: "/* Licensing info */"
-			}
-		}).on("error", notify.onError()))
+		// .pipe(uglify({
+		// 	// https://github.com/mishoo/UglifyJS#mangle-options
+		// 	mangle: {
+		// 			toplevel: true
+		// 	},
+		// 	// https://github.com/mishoo/UglifyJS#output-options
+		// 	output: {
+		// 			beautify: false,
+		// 			comments: false,
+		// 			preamble: "/* Licensing info */"
+		// 	}
+		// }).on("error", notify.onError()))
 		.pipe(rename('main.min.js'))
     .pipe(sourcemaps.write('.'))
 		.pipe(dest('app/js'))
