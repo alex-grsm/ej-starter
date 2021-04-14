@@ -6,12 +6,12 @@
 	"author": "Alexey Grsm",
 	"license": "ISC",
 	"devDependencies": {
-		"@babel/core": "^7.12.10",
-		"@babel/preset-env": "^7.12.11",
+		"@babel/core": "^7.13.15",
+		"@babel/preset-env": "^7.13.15",
 		"babel-loader": "^8.2.2",
 		"babel-plugin-module-resolver": "^4.1.0",
 		"babel-plugin-root-import": "^6.6.0",
-		"browser-sync": "^2.26.13",
+		"browser-sync": "^2.26.14",
 		"browsersync-ssi": "^0.2.4",
 		"del": "^6.0.0",
 		"gulp": "^4.0.2",
@@ -33,7 +33,7 @@
 		"gulp-uglify-es": "^2.0.0",
 		"gulp-util": "^3.0.8",
 		"vinyl-ftp": "^0.6.1",
-		"webpack-stream": "^6.1.1"
+		"webpack-stream": "^6.1.2"
 	},
 	"dependencies": {
 		"bootstrap": "^4.6.0"
